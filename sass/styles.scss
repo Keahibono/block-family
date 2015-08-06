@@ -14,21 +14,30 @@ $large_screen: "only screen and (min-width: 1000px)";
 @mixin block_font($block_font_color: $grey){
   font-size: 60px;
   color: $block_font_color;
-  padding: 20px;
+  padding: 23px;
 }
 
 // Styles
 body{
   background-color: $orange;
   text-align: center;
-  color: $grey;
+  .block_family{
+      li {
+        background-color: $grey;
+        margin-bottom: 22.5px;
+        padding: 21.5px;
+      }
+      max-width:556px;
+      margin:auto;
+    }
+
   @media #{$medium_screen} {
     color: $orange;
     .block_family{
       li {
         background-color: $white;
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 22.5px;
+        padding: 21.5px;
       }
       max-width:556px;
       margin:auto;
@@ -36,12 +45,12 @@ body{
   }
   @media #{$large_screen} {
     background-color: $grey;
-    color: $grey;
+    color: $orange;
     .block_family{
       li {
         background-color: $orange;
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 22.5px;
+        padding: 21.5px;
       }
       max-width:890px;
       margin:auto;
@@ -57,10 +66,10 @@ h1, h2, h3, h4{
 h1{
   @include block_font($grey);
   @media #{$medium_screen} {
-    @include block_font($white)
+    @include block_font($white);
   }
   @media #{$large_screen} {
-    @inlcude block_font($orange)
+    @include block_font($orange);
   }
 }
 

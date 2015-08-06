@@ -1,38 +1,84 @@
 // Resets, Clearfix, etc
+@import "partials/clearfix";
+@import "partials/reset";
 
 // Variables
- 
-// Media Query Ranges 
- 
+$orange: #ffa500;
+$white: #fff;
+$grey: #222;
+
+// Media Query Ranges
+$medium_screen: "only screen and (min-width: 670px)";
+$large_screen: "only screen and (min-width: 1000px)";
 // Mixins
 
 // Styles
 body{
-  background-color: orange;
+  background-color: $orange;
   text-align: center;
-  color: #EEE;
+  color: $grey;
+  @media #{$medium_screen} {
+    color: $orange;
+    .block_family{
+      li {
+        background-color: $white;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      max-width:556px;
+      margin:auto;
+    }
+  }
+  @media #{$large_screen} {
+    background-color: $grey;
+    color: $grey;
+    .block_family{
+      li {
+        background-color: $orange;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      max-width:890px;
+      margin:auto;
+    }
+  }
 }
- 
+
 h1, h2, h3, h4{
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  border: 2px;
 }
- 
+
 h1{
   padding: 20px;
+  font-size: 60px;
+  @media #{$medium_screen} {
+    color: $white;
+  }
+  @media #{$large_screen} {
+    color: $orange;
+  }
 }
- 
+
 h2{
- 
+  font-size: 40px;
+  color: $white;
+  @media #{$medium_screen} {
+    color: $orange;
+  }
+  @media #{$large_screen} {
+    color: $grey;
+  }
 }
- 
- 
+
+
 .block_family{
-  max-width:350px;
+  max-width:390px;
   margin:auto;
 }
- 
+
 .block_family li{
   background-color: #222;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 23px;
 }

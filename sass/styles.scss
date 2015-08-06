@@ -11,6 +11,11 @@ $grey: #222;
 $medium_screen: "only screen and (min-width: 670px)";
 $large_screen: "only screen and (min-width: 1000px)";
 // Mixins
+@mixin block_font($block_font_color: $grey){
+  font-size: 60px;
+  color: $block_font_color;
+  padding: 20px;
+}
 
 // Styles
 body{
@@ -50,13 +55,12 @@ h1, h2, h3, h4{
 }
 
 h1{
-  padding: 20px;
-  font-size: 60px;
+  @include block_font($grey);
   @media #{$medium_screen} {
-    color: $white;
+    @include block_font($white)
   }
   @media #{$large_screen} {
-    color: $orange;
+    @inlcude block_font($orange)
   }
 }
 
